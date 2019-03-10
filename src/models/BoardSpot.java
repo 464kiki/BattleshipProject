@@ -61,17 +61,4 @@ public class BoardSpot {
 	}
 	///////////////////
 
-	public void creareBoardSpot() {
-
-	}
-
-	@Override // Edit Later
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("BoardSpot [isTaken()=").append(isTaken()).append(", isHit()=").append(isHit())
-				.append(", getRow()=").append(getRow()).append(", getColumn()=").append(getColumn())
-				.append(", getImg()=").append(getImg()).append("]");
-		return builder.toString();
-	}
-
 }

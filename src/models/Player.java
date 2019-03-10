@@ -61,13 +61,4 @@ public class Player {
 		return playerName;
 	}
 
-	@Override // Edit Later
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("Player [getPlayerName()=").append(getPlayerName()).append(", getBoard()=").append(getBoard())
-				.append(", getShips()=").append(Arrays.toString(getShips())).append(", getWinLose()=")
-				.append(getWinLose()).append("]");
-		return builder.toString();
-	}
-
 }

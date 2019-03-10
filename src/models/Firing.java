@@ -1,7 +1,7 @@
 package models;
 
 public class Firing {
-	public void titleLocation() {
+	public void tileLocation() {
 
 	}
 

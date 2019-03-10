@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>0</x>
+      <y>152</y>
+      <w>264</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>Views
+--
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>320</x>
+      <y>24</y>
+      <w>216</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>Controller
+--
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>0</x>
+      <y>16</y>
+      <w>176</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>app
+--
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>8</x>
+      <y>40</y>
+      <w>160</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>Driver
+--
+
+--
++main(args : String[]) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>184</x>
+      <y>40</y>
+      <w>88</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>Console IO
+«library»</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>328</x>
+      <y>48</y>
+      <w>200</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>GamePlay
+--
+- player : Player
+- board : Board
+- players : Hashmap &lt;String, Player&gt;  
+--
+_+ run() : void_
+_- createGame() : void_
+_- playGame() : void_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>8</x>
+      <y>176</y>
+      <w>248</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>Display
+--
+
+--
+_-Screen() : void_
+_-SwitchScreen() : void_
+_-UpdateScreen() : void_
+_-DestroyScreen() : void_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>0</x>
+      <y>296</y>
+      <w>744</w>
+      <h>336</h>
+    </coordinates>
+    <panel_attributes>Models
+--
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>512</x>
+      <y>320</y>
+      <w>224</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>Board
+--
+- Board : BoardSpot [][]
+--
++ Board() &lt;&lt;ctor&gt;&gt;
+
++ getBoard() : BoardSpot[][]
+
++ setBoard(board : BoardSpot[][]) : void
+
++ createBoard(Board : BoardSpot[][]) : void
++ placeShip() : void
+
++ toString() : String &lt;&lt;override&gt;&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>256</x>
+      <y>320</y>
+      <w>208</w>
+      <h>288</h>
+    </coordinates>
+    <panel_attributes>BoardSpot
+--
+- isTaken : boolean
+- isHit : boolean
+- row : int
+- column : int
+- img : datatype
+--
++ BoardSpot() &lt;&lt;ctor&gt;&gt;
+
++ getIsTaken() : boolean
++ getIsHit() : boolean
++ getRow() : int
++ getColumn() : int
+
++ setIsTaken(occupied : boolean) : void
++ setIsHit(isHit : boolean) : void
++ setRow(row : int) : void
++ setColumn(column : int) : void
+
++createBoardSpot() : void
+
++ toString() : String &lt;&lt;override&gt;&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>8</x>
+      <y>320</y>
+      <w>240</w>
+      <h>288</h>
+    </coordinates>
+    <panel_attributes>Player
+--
+- playerName : String
+- board : Board
+- WinLose : int
+- ships : Array[] 
+--
++ Player() &lt;&lt;ctor&gt;&gt;
+
++ getPlayerName() : String
++ getBoard() : Board
++ getWin-Lose() : int
++ getShips() : Array[]
+
++ setPlayerName(playerName : String ) : void
++ setBoard(board : Board) : void
++ setWin-Lose(Win-Lose : int) : void
++ setShips(ship : Array[]) : void
+
++ takeTurn() : void
++ checkWin(playerName: String) : String 
+
++ toString() : String &lt;&lt;override&gt;&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>248</x>
+      <y>136</y>
+      <w>96</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+uses</panel_attributes>
+    <additional_attributes>10.0;100.0;50.0;100.0;50.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>160</x>
+      <y>80</y>
+      <w>184</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+uses</panel_attributes>
+    <additional_attributes>210.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>264</x>
+      <y>48</y>
+      <w>80</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+uses</panel_attributes>
+    <additional_attributes>10.0;20.0;80.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>528</x>
+      <y>680</y>
+      <w>128</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>Ship
+--
++ shipLength() : void
++ shipName() : void
++ mapPosition() : void
++ shipImgs() : void </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>0</x>
+      <y>656</y>
+      <w>1128</w>
+      <h>448</h>
+    </coordinates>
+    <panel_attributes>Ships
+--
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>232</x>
+      <y>848</y>
+      <w>216</w>
+      <h>248</h>
+    </coordinates>
+    <panel_attributes>Battleship
+--
+- shipLength : int
+- shipName : String
+- imgShip : Array[]
+- position : Array[]
+--
++ Battleship() &lt;&lt;ctor&gt;&gt;
+
++ getShipLength() : int
++ getShipName() : String
++ getImgShips() : Array[]
++ getPosition() : Array[]
+
++ setShipLength(shipLength : int) : void
++ setShipName(shipName : String) : void
++ setImgShips(imgShips : Array[]) : void
++ setPosition(position : Array[]) : void
+
++ toString() : String &lt;&lt;override&gt;&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>456</x>
+      <y>848</y>
+      <w>216</w>
+      <h>248</h>
+    </coordinates>
+    <panel_attributes>Submarine
+--
+- shipLength : int
+- shipName : String
+- imgShip : Array[]
+- position : Array[]
+--
++ Submarine() &lt;&lt;ctor&gt;&gt;
+
++ getShipLength() : int
++ getShipName() : String
++ getImgShips() : Array[]
++ getPosition() : Array[]
+
++ setShipLength(shipLength : int) : void
++ setShipName(shipName : String) : void
++ setImgShips(imgShips : Array[]) : void
++ setPosition(position : Array[]) : void
+
++ toString() : String &lt;&lt;override&gt;&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>8</x>
+      <y>848</y>
+      <w>216</w>
+      <h>248</h>
+    </coordinates>
+    <panel_attributes>Carrier
+--
+- shipLength : int
+- shipName : String
+- imgShip : Array[]
+- position : Array[]
+--
++ Carrier() &lt;&lt;ctor&gt;&gt;
+
++ getShipLength() : int
++ getShipName() : String
++ getImgShips() : Array[]
++ getPosition() : Array[]
+
++ setShipLength(shipLength : int) : void
++ setShipName(shipName : String) : void
++ setImgShips(imgShips : Array[]) : void
++ setPosition(position : Array[]) : void
+
++ toString() : String &lt;&lt;override&gt;&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>680</x>
+      <y>848</y>
+      <w>216</w>
+      <h>248</h>
+    </coordinates>
+    <panel_attributes>Cruiser
+--
+- shipLength : int
+- shipName : String
+- imgShip : Array[]
+- position : Array[]
+--
++ Cruiser() &lt;&lt;ctor&gt;&gt;
+
++ getShipLength() : int
++ getShipName() : String
++ getImgShips() : Array[]
++ getPosition() : Array[]
+
++ setShipLength(shipLength : int) : void
++ setShipName(shipName : String) : void
++ setImgShips(imgShips : Array[]) : void
++ setPosition(position : Array[]) : void
+
++ toString() : String &lt;&lt;override&gt;&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>904</x>
+      <y>848</y>
+      <w>216</w>
+      <h>248</h>
+    </coordinates>
+    <panel_attributes>Destroyer
+--
+- shipLength : int
+- shipName : String
+- imgShip : Array[]
+- position : Array[]
+--
++ Destroyer() &lt;&lt;ctor&gt;&gt;
+
++ getShipLength() : int
++ getShipName() : String
++ getImgShips() : Array[]
++ getPosition() : Array[]
+
++ setShipLength(shipLength : int) : void
++ setShipName(shipName : String) : void
++ setImgShips(imgShips : Array[]) : void
++ setPosition(position : Array[]) : void
+
++ toString() : String &lt;&lt;override&gt;&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>648</x>
+      <y>728</y>
+      <w>312</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;370.0;10.0;370.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>648</x>
+      <y>752</y>
+      <w>208</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;240.0;10.0;240.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>144</x>
+      <y>728</y>
+      <w>392</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>470.0;10.0;10.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>264</x>
+      <y>752</y>
+      <w>272</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>320.0;10.0;10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>608</x>
+      <y>784</y>
+      <w>24</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>472</x>
+      <y>504</y>
+      <w>136</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>SaveLoad
+--
+
+--
++ saveGame() : void
++ loadGame () : void
++ saveHighscore() : void
++ loadHighscore() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>616</x>
+      <y>504</y>
+      <w>120</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Firing
+--
+
+--
++ tileLocation() : void
++ isHit() : boolean
++ isShip() : boolean
++ whatShip(): void
++ whatPart() : void
++ hitShip() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>400</x>
+      <y>152</y>
+      <w>80</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+Instance of</panel_attributes>
+    <additional_attributes>10.0;210.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>512</x>
+      <y>152</y>
+      <w>80</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+Instance of</panel_attributes>
+    <additional_attributes>10.0;210.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>224</x>
+      <y>152</y>
+      <w>160</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;&gt;&gt;
+Composed of</panel_attributes>
+    <additional_attributes>10.0;210.0;10.0;170.0;180.0;170.0;180.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>520</x>
+      <y>112</y>
+      <w>336</w>
+      <h>568</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+uses</panel_attributes>
+    <additional_attributes>10.0;10.0;370.0;10.0;370.0;690.0;30.0;690.0;30.0;620.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>520</x>
+      <y>128</y>
+      <w>304</w>
+      <h>536</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+uses</panel_attributes>
+    <additional_attributes>10.0;10.0;330.0;10.0;330.0;650.0;180.0;650.0;180.0;620.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>520</x>
+      <y>88</y>
+      <w>344</w>
+      <h>600</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+Instances of</panel_attributes>
+    <additional_attributes>10.0;20.0;410.0;20.0;410.0;730.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>456</x>
+      <y>384</y>
+      <w>72</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+uses</panel_attributes>
+    <additional_attributes>10.0;20.0;70.0;20.0</additional_attributes>
+  </element>
+</diagram>

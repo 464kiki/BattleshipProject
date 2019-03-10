@@ -4,16 +4,13 @@ import javafx.scene.image.Image;
 
 public class Submarine implements Ship {
 	// Variables
-	private int shipLength;
-	private String shipName;
-	private Image shipImg[];
+	final private int shipLength = 3;
+	final private String shipName = "Submarine";
+	final private Image shipImg[] = {};
 	private String shipPosition[];
 
-	public Submarine(int shipLength, String shipName, Image[] shipImg, String[] shipPosition) {
+	public Submarine(String[] shipPosition) {
 		super();
-		this.setShipLength(shipLength);
-		this.setShipName(shipName);
-		this.setShipImg(shipImg);
 		this.setShipPosition(shipPosition);
 	}
 
@@ -22,24 +19,12 @@ public class Submarine implements Ship {
 		return shipLength;
 	}
 
-	public void setShipLength(int shipLength) {
-		this.shipLength = shipLength;
-	}
-
 	public String getShipName() {
 		return shipName;
 	}
 
-	public void setShipName(String shipName) {
-		this.shipName = shipName;
-	}
-
 	public Image[] getShipImg() {
 		return shipImg;
-	}
-
-	public void setShipImg(Image shipImg[]) {
-		this.shipImg = shipImg;
 	}
 
 	public String[] getShipPosition() {
@@ -50,35 +35,44 @@ public class Submarine implements Ship {
 		this.shipPosition = shipPosition;
 	}
 	///////////////////
+	@Override
+	public String shipLength(int tileLength) {
+
+		if (tileLength == shipLength) {
+
+			return "Tiles selected is the correct length.";
+		} else {
+			return "Please select the tile length that equals the ship length you've chosen.";
+		}
+
+	}
 
 	@Override
-	public void shipLength() {
+	public String shipPosition() {
+//		if (/*ship coordinates changes in x axis or in y axis*/) {
+//			return "Ship needs to be vertical or horizontal.";
+//		} else {
+//			//save coordinates in shipPosition
+//			return "Ship has been stored.";
+//		}
+
+		return null;
+
+	}
+
+	@Override
+	public void shipNameSunk() {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void shipName() {
-		// TODO Auto-generated method stub
-
+	public Image shipImgs() {
+		// If array isn't empty
+		if (shipPosition.length != 0) {
+			// changes selected tiles to correct ship image, which returns an image
+		}
+		return null;
 	}
 
-	@Override
-	public void shipPosition() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void shipImgs() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("Ship Name: ").append(getShipName()).append("Ship Length: ").append(getShipLength());
-		return builder.toString();
-	}
 }

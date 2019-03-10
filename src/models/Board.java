@@ -29,11 +29,4 @@ public class Board {
 
 	}
 
-	@Override // Edit later
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("Board [getBoard()=").append(Arrays.toString(getBoard())).append("]");
-		return builder.toString();
-	}
-
 }
