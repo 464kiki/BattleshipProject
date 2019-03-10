@@ -53,12 +53,16 @@ public class Player {
 	///////////////////
 
 	public void takeTurn() {
-
+		//Switch using boolean to see which turn it is
+		//Swap data back and forth, changing the grid's imageviews
 	}
 
 	public String checkWin(String playerName) {
-
+		//Count how many unique hits have occurred
+		if(WinLose == 17) {
+			//player wins
+		}
+			
 		return playerName;
 	}
-
 }

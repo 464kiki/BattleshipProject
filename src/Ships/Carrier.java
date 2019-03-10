@@ -62,12 +62,6 @@ public class Carrier implements Ship {
 	}
 
 	@Override
-	public void shipNameSunk() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
 	public Image shipImgs() {
 		// If array isn't empty
 		if (shipPosition.length != 0) {
@@ -76,4 +70,9 @@ public class Carrier implements Ship {
 		return null;
 	}
 
+	@Override
+	public void shipNameSunk() {
+		// TODO Auto-generated method stub
+
+	}
 }

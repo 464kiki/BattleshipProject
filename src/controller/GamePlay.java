@@ -23,14 +23,14 @@ public class GamePlay implements Initializable {
 	private Player player;
 	private Board board;
 	HashMap<String, Player> players;
-	// HashMap<String, Player> players;
 
 	// GUI interactables
+	// Grids
 	@FXML
 	private GridPane grid_placing;
 	@FXML
 	private GridPane grid_firing;
-
+	// Panes
 	@FXML
 	private AnchorPane placingAnchorPane;
 
@@ -101,24 +101,39 @@ public class GamePlay implements Initializable {
 		btn_accept.setOnMouseClicked((MouseEvent e) -> {
 			System.out.println("Clicked!"); // change functionality
 		});
-		//
+		// Returning to main menu
 		btn_return.setOnMouseClicked((MouseEvent e) -> {
 			System.out.println("Clicked!"); // change functionality
 		});
+		// Firing at ships
 		btn_fire.setOnMouseClicked((MouseEvent e) -> {
 			System.out.println("Clicked!"); // change functionality
 		});
-	}
 
-	public static void run() {
+		// Selecting carrier
+		ship_Carrier.setOnMouseClicked((MouseEvent e) -> {
+			System.out.println("Clicked!"); // change functionality
+		});
+		// Selecting battleship
+		ship_Battleship.setOnMouseClicked((MouseEvent e) -> {
+			System.out.println("Clicked!"); // change functionality
+		});
+		// Selecting cruiser
+		ship_Cruiser.setOnMouseClicked((MouseEvent e) -> {
+			System.out.println("Clicked!"); // change functionality
+		});
+		// Selecting submarine
+		ship_Submarine.setOnMouseClicked((MouseEvent e) -> {
+			System.out.println("Clicked!"); // change functionality
+		});
+		// Selecting destroyer
+		ship_Destroyer.setOnMouseClicked((MouseEvent e) -> {
+			System.out.println("Clicked!"); // change functionality
+		});
 
 	}
 
 	private void createGame() {
-
-	}
-
-	private void playGame() {
 
 	}
 

@@ -34,6 +34,7 @@ public class Submarine implements Ship {
 	public void setShipPosition(String shipPosition[]) {
 		this.shipPosition = shipPosition;
 	}
+
 	///////////////////
 	@Override
 	public String shipLength(int tileLength) {
@@ -61,18 +62,18 @@ public class Submarine implements Ship {
 	}
 
 	@Override
-	public void shipNameSunk() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
 	public Image shipImgs() {
 		// If array isn't empty
 		if (shipPosition.length != 0) {
 			// changes selected tiles to correct ship image, which returns an image
 		}
 		return null;
+	}
+
+	@Override
+	public void shipNameSunk() {
+		// TODO Auto-generated method stub
+
 	}
 
 }
