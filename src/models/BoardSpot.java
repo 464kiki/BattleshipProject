@@ -6,16 +6,12 @@ public class BoardSpot {
 	// Variables
 	private boolean isTaken;
 	private boolean isHit;
-	private int row;
-	private int column;
 	private Image img;
 
-	public BoardSpot(boolean isTaken, boolean isHit, int row, int column, Image img) {
+	public BoardSpot(boolean isTaken, boolean isHit, Image img) {
 		super();
 		this.setTaken(isTaken);
 		this.setHit(isHit);
-		this.setRow(row);
-		this.setColumn(column);
 		this.setImg(img);
 	}
 
@@ -36,22 +32,6 @@ public class BoardSpot {
 		this.isHit = isHit;
 	}
 
-	public int getRow() {
-		return row;
-	}
-
-	public void setRow(int row) {
-		this.row = row;
-	}
-
-	public int getColumn() {
-		return column;
-	}
-
-	public void setColumn(int column) {
-		this.column = column;
-	}
-
 	public Image getImg() {
 		return img;
 	}
@@ -60,5 +40,7 @@ public class BoardSpot {
 		this.img = img;
 	}
 	///////////////////
+
+	
 
 }

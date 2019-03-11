@@ -1,5 +1,7 @@
 package Ships;
 
+import java.util.Arrays;
+
 import javafx.scene.image.Image;
 
 public class Destroyer implements Ship {
@@ -8,11 +10,6 @@ public class Destroyer implements Ship {
 	final private String shipName = "Destroyer";
 	final private Image shipImg[] = {};
 	private String shipPosition[];
-
-	public Destroyer(String[] shipPosition) {
-		super();
-		this.setShipPosition(shipPosition);
-	}
 
 	// Getters & Setters
 	public int getShipLength() {
@@ -49,25 +46,71 @@ public class Destroyer implements Ship {
 	}
 
 	@Override
-	public String shipPosition() {
-//		if (/*ship coordinates changes in x axis or in y axis*/) {
-//			return "Ship needs to be vertical or horizontal.";
-//		} else {
-//			//save coordinates in shipPosition
-//			return "Ship has been stored.";
-//		}
+	public String shipPosition(String[] shipPositionDE) {
+		// Get char index for each coordinate
+		char x1 = 0;
+		char x2 = 0;
 
-		return null;
+		char y1 = 0;
+		char y2 = 0;
 
-	}
-
-	@Override
-	public Image shipImgs() {
-		// If array isn't empty
-		if (shipPosition.length != 0) {
-			// changes selected tiles to correct ship image, which returns an image
+		// Gets vertical positioning
+		for (int count = 0; count < shipPositionDE.length; count++) {
+			y1 = shipPositionDE[count = 0].charAt(2);
+			y2 = shipPositionDE[count = 1].charAt(2);
+			System.out.println(y1 + "+" + y2);
 		}
-		return null;
+
+		// Checks if y value is 10
+		if (y1 == '0') {
+			y1 = shipPositionDE[0].charAt(1);
+			if (y1 == '1') {
+				y1 = '-' /* equals 10 */;
+			}
+		} else if (y2 == '0') {
+			y2 = shipPositionDE[0].charAt(1);
+			if (y2 == '1') {
+				y2 = '-' /* equals 10 */;
+			}
+		}
+		///////////////////////////
+
+		// Gets horizontal positioning
+		for (int count = 0; count < shipPositionDE.length; count++) {
+			x1 = shipPositionDE[count = 0].charAt(5);
+			x2 = shipPositionDE[count = 1].charAt(5);
+			System.out.println(x1 + "+" + x2);
+		}
+
+		// Checks if x value is 10
+		if (x1 == '0') {
+			x1 = shipPositionDE[0].charAt(4);
+			if (x1 == '1') {
+				x1 = '-' /* equals 10 */;
+			}
+		} else if (x2 == '0') {
+			x2 = shipPositionDE[0].charAt(4);
+			if (x2 == '1') {
+				x2 = '-' /* equals 10 */;
+			}
+		}
+		///////////////////////////
+
+		// Compares if ship is horizontal
+		if (y1 == y2) {
+			// Store coordinates in array
+			setShipPosition(shipPositionDE);
+			System.out.println(Arrays.toString(shipPositionDE));
+			return "Ship has been stored horizontally";
+		} else if /* Compares if ship is vertical */ (x1 == x2) {
+			// Store coordinates in array
+			setShipPosition(shipPositionDE);
+			System.out.println(Arrays.toString(shipPositionDE));
+			return "Ship has been stored vertically";
+		} else {
+			// Make them do it again
+			return "Ship needs to be vertical or horizontal.";
+		}
 	}
 
 	@Override
