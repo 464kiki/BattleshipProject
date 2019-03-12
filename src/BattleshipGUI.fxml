@@ -344,7 +344,7 @@
 								</Label>
 							</children>
 						</GridPane>
-						<Button id="btn_fire" fx:id="btn_fire" layoutX="472.0" layoutY="74.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" text="Fire!" />
+						<Button id="btn_fire" fx:id="btn_fire" layoutX="472.0" layoutY="74.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" text="Switch Turn" />
 						<Label layoutX="472.0" layoutY="14.0" prefHeight="42.0" prefWidth="160.0" style=" -fx-border-color:black; -fx-border-width: 1; -fx-border-style: solid;" text="Instructions: Select a tile and &#10;click the button to fire.">
 							<padding>
 								<Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />

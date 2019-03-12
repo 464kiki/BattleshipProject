@@ -31,7 +31,6 @@ public class GamePlay implements Initializable {
 	private Board board;
 	private Board currBoard;
 	private BoardSpot boardspot;
-	private BoardSpot[][] tilespots;
 	HashMap<String, Player> players = new HashMap<String, Player>();
 
 	// Saves the name in a global variable
@@ -44,6 +43,8 @@ public class GamePlay implements Initializable {
 
 	// Counts number of ships placed
 	int counter = 0;
+	// Counts number of unique hits each player takes
+	int uniqueHit = 0;
 
 	// Ship selection
 	boolean isCarrier = false;
@@ -128,6 +129,11 @@ public class GamePlay implements Initializable {
 		int rowNum = 11;
 		int colLetter = 10;
 		board = new Board();
+		tileLengthCA = 0;
+		tileLengthBA = 0;
+		tileLengthCR = 0;
+		tileLengthSU = 0;
+		tileLengthDE = 0;
 
 		for (int i = 0; i < rowNum; i++) {
 			for (int j = 0; j < colLetter; j++) {
@@ -256,6 +262,7 @@ public class GamePlay implements Initializable {
 
 		for (int i = 0; i < rowNum; i++) {
 			for (int j = 0; j < colLetter; j++) {
+
 				// Makes a new ImageView each time
 				ImageView imageView = new ImageView();
 
@@ -306,21 +313,31 @@ public class GamePlay implements Initializable {
 						// If ship is in square
 						if (isTaken == true) {
 							// change imageview to red target
-							File hit = new File("src/images/red_hit.jpg");
+							String target_hit = "src/images/red_hit.jpg";
+							File hit = new File(target_hit);
 							Image red_hit = new Image(hit.toURI().toString());
 							imageView.setImage(red_hit);
+							uniqueHit++;
+							player.setWinLose(uniqueHit);
 
 							// Change boolean to true
 							board.getBoard()[y][x].setHit(true);
+
+							// Change image string to hit
+							board.getBoard()[y][x].setImg(target_hit);
+
 						} else {
 							// Miss
-							// change imageview to red target
-							File miss = new File("src/images/miss_hit.jpg");
+							// change imageview to white target
+							String missHit = "src/images/miss_hit.jpg";
+							File miss = new File(missHit);
 							Image miss_hit = new Image(miss.toURI().toString());
 							imageView.setImage(miss_hit);
 
 							// Change boolean to true
 							board.getBoard()[y][x].setHit(true);
+							// Change image string to hit
+							board.getBoard()[y][x].setImg(missHit);
 						}
 					}
 				});
