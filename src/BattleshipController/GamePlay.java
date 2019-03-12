@@ -561,121 +561,107 @@ public class GamePlay implements Initializable {
 			int colLetter = 10;
 
 			for (Node node : grid_firing.getChildren()) {
-		        if(GridPane.getRowIndex(node) > 0 && GridPane.getColumnIndex(node) > 0) {
-		            
-		        }
-		    }
-				
-							// Gets the image from that variable
-							String properImage = currBoard.getBoard()[i][j].getImg();
-							System.out.println(properImage);
+				if (GridPane.getRowIndex(node) > 0 && GridPane.getColumnIndex(node) > 0) {
+					// Gets the image from that variable
+					String properImage = currBoard.getBoard()[GridPane.getRowIndex(node)][GridPane.getColumnIndex(node)]
+							.getImg();
+					System.out.println(properImage);
 
-							// Places it onto the board
-							File rightImage = new File(properImage);
-							Image image = new Image(rightImage.toURI().toString());
-							imageViewF.setImage(image);
-						}
-					}
+					// Places it onto the board
+					File rightImage = new File(properImage);
+					Image image = new Image(rightImage.toURI().toString());
+					imageViewF.setImage(image);
+				}
+			}
 
-	});
+		});
 
-	// Getting player name
-	btn_name.setOnMouseClicked((
+		// Getting player name
+		btn_name.setOnMouseClicked((
 
-	MouseEvent e)->
-	{
-		System.out.println("Clicked!");
-		String playerName;
-		nameCounter++;
+				MouseEvent e) -> {
+			System.out.println("Clicked!");
+			String playerName;
+			nameCounter++;
 
-		if (nameCounter == 1) {
-			// Gets value from textfield
-			playerName = txt_playerName.getText();
-			player = new Player(playerName);
-			player1 = playerName;
+			if (nameCounter == 1) {
+				// Gets value from textfield
+				playerName = txt_playerName.getText();
+				player = new Player(playerName);
+				player1 = playerName;
 
-			// Put value into hashmap and player instance
-			players.put(playerName, player);
-		} else if (nameCounter == 2) {
-			// Gets value from textfield
-			playerName = txt_playerName.getText();
-			player = new Player(playerName);
-			player2 = playerName;
+				// Put value into hashmap and player instance
+				players.put(playerName, player);
+			} else if (nameCounter == 2) {
+				// Gets value from textfield
+				playerName = txt_playerName.getText();
+				player = new Player(playerName);
+				player2 = playerName;
 
-			// Put value into hashmap and player instance
-			players.put(playerName, player);
-		}
+				// Put value into hashmap and player instance
+				players.put(playerName, player);
+			}
 
-	});
+		});
 
-	// Selecting carrier
-	ship_Carrier.setOnMouseClicked((
-	MouseEvent e)->
-	{
-		// Tells console it's been clicked
-		System.out.println("Clicked!");
+		// Selecting carrier
+		ship_Carrier.setOnMouseClicked((MouseEvent e) -> {
+			// Tells console it's been clicked
+			System.out.println("Clicked!");
 
-		// Carrier is selected
-		isCarrier = true;
+			// Carrier is selected
+			isCarrier = true;
 
-		// Every other ship false
-		isBattleship = false;
-		isCruiser = false;
-		isSubmarine = false;
-		isDestroyer = false;
-	});
-	// Selecting battleship
-	ship_Battleship.setOnMouseClicked((
-	MouseEvent e)->
-	{
-		// Tells console it's been clicked
-		System.out.println("Clicked!");
+			// Every other ship false
+			isBattleship = false;
+			isCruiser = false;
+			isSubmarine = false;
+			isDestroyer = false;
+		});
+		// Selecting battleship
+		ship_Battleship.setOnMouseClicked((MouseEvent e) -> {
+			// Tells console it's been clicked
+			System.out.println("Clicked!");
 
-		// Battleship is selected
-		isBattleship = true;
+			// Battleship is selected
+			isBattleship = true;
 
-		// Every other ship false
-		isCarrier = false;
-		isCruiser = false;
-		isSubmarine = false;
-		isDestroyer = false;
-	});
-	// Selecting cruiser
-	ship_Cruiser.setOnMouseClicked((
-	MouseEvent e)->
-	{
-		// Tells console it's been clicked
-		System.out.println("Clicked!");
+			// Every other ship false
+			isCarrier = false;
+			isCruiser = false;
+			isSubmarine = false;
+			isDestroyer = false;
+		});
+		// Selecting cruiser
+		ship_Cruiser.setOnMouseClicked((MouseEvent e) -> {
+			// Tells console it's been clicked
+			System.out.println("Clicked!");
 
-		// Cruiser is selected
-		isCruiser = true;
+			// Cruiser is selected
+			isCruiser = true;
 
-		// Every other ship false
-		isCarrier = false;
-		isBattleship = false;
-		isSubmarine = false;
-		isDestroyer = false;
-	});
-	// Selecting submarine
-	ship_Submarine.setOnMouseClicked((
-	MouseEvent e)->
-	{
-		// Tells console it's been clicked
-		System.out.println("Clicked!");
+			// Every other ship false
+			isCarrier = false;
+			isBattleship = false;
+			isSubmarine = false;
+			isDestroyer = false;
+		});
+		// Selecting submarine
+		ship_Submarine.setOnMouseClicked((MouseEvent e) -> {
+			// Tells console it's been clicked
+			System.out.println("Clicked!");
 
-		// Submarine is selected
-		isSubmarine = true;
+			// Submarine is selected
+			isSubmarine = true;
 
-		// Every other ship false
-		isCarrier = false;
-		isBattleship = false;
-		isCruiser = false;
-		isDestroyer = false;
-	});
-	// Selecting destroyer
-	ship_Destroyer.setOnMouseClicked((
-	MouseEvent e)->
-	{
+			// Every other ship false
+			isCarrier = false;
+			isBattleship = false;
+			isCruiser = false;
+			isDestroyer = false;
+		});
+		// Selecting destroyer
+		ship_Destroyer.setOnMouseClicked((MouseEvent e) -> {
 			// Tells console it's been clicked
 			System.out.println("Clicked!");
 
@@ -689,6 +675,6 @@ public class GamePlay implements Initializable {
 			isSubmarine = false;
 		});
 
-}
+	}
 
 }
