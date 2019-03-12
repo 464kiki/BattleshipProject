@@ -1,12 +1,12 @@
-package models;
+package BattleshipModels;
 
 public class Board {
 	// Variables
 	private BoardSpot[][] Board;
 
-	public Board(BoardSpot[][] board) {
+	public Board() {
 		super();
-		setBoard(board);
+		Board = new BoardSpot[11][10];
 	}
 
 	// Getter & Setter
@@ -20,10 +20,6 @@ public class Board {
 	/////////////////
 
 	public void createBoard(BoardSpot[][] Board) {
-
-	}
-
-	public void placeShip() {
 
 	}
 

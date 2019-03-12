@@ -1,15 +1,13 @@
-package models;
+package BattleshipModels;
 
 public class Player {
 	private String playerName;
 	private Board board;
 	private int WinLose;
 
-	public Player(String playerName, Board board, int winLose) {
+	public Player(String playerName) {
 		super();
 		this.setPlayerName(playerName);
-		this.setBoard(board);
-		setWinLose(winLose);
 	}
 
 	// Getters & Setters
@@ -44,9 +42,9 @@ public class Player {
 	}
 
 	public String checkWin(String playerName) {
-		// Count how many unique hits have occurred
+		// Count how many unique hits have occurred by the player
 		if (WinLose == 17) {
-			// player wins
+			// player win
 		}
 
 		return playerName;

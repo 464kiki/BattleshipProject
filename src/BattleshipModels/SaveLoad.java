@@ -1,4 +1,4 @@
-package models;
+package BattleshipModels;
 
 public class SaveLoad {
 	public void saveGame() {

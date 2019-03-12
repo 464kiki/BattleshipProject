@@ -1,4 +1,4 @@
-package Ships;
+package BattleshipShips;
 
 import java.util.Arrays;
 
@@ -28,7 +28,7 @@ public class Carrier implements Ship {
 
 	@Override
 	public String shipLength(int tileLength) {
-		// If tiles equal the ship length
+		// Compares the #tiles selected with the ship length
 		if (tileLength == shipLength) {
 			return "Tiles selected is the correct length.";
 		} else {
@@ -149,8 +149,13 @@ public class Carrier implements Ship {
 	}
 
 	@Override
-	public void shipNameSunk() {
-		// TODO Auto-generated method stub
+	public String shipNameSunk() {
+		// If the ship position becomes null from targeting it
+		if (getShipPosition() == null) {
+			return getShipName() + "has been sunk!";
+		} else {
+			return null;
+		}
 
 	}
 }

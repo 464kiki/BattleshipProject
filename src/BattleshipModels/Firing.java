@@ -1,4 +1,4 @@
-package models;
+package BattleshipModels;
 
 public class Firing {
 	public void tileLocation() {

@@ -1,4 +1,4 @@
-package Ships;
+package BattleshipShips;
 
 public interface Ship {
 	// Makes sure tiles selected are ship length
@@ -8,5 +8,5 @@ public interface Ship {
 	public String shipPosition(String[] shipPosition);
 
 	// When ship is sunk, display message
-	public void shipNameSunk();
+	public String shipNameSunk();
 }

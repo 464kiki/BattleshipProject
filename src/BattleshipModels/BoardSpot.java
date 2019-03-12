@@ -1,14 +1,12 @@
-package models;
-
-import javafx.scene.image.Image;
+package BattleshipModels;
 
 public class BoardSpot {
 	// Variables
 	private boolean isTaken;
 	private boolean isHit;
-	private Image img;
+	private String img;
 
-	public BoardSpot(boolean isTaken, boolean isHit, Image img) {
+	public BoardSpot(boolean isTaken, boolean isHit, String img) {
 		super();
 		this.setTaken(isTaken);
 		this.setHit(isHit);
@@ -32,15 +30,21 @@ public class BoardSpot {
 		this.isHit = isHit;
 	}
 
-	public Image getImg() {
+	public String getImg() {
 		return img;
 	}
 
-	public void setImg(Image img) {
+	public void setImg(String img) {
 		this.img = img;
 	}
 	///////////////////
 
-	
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("isTaken = ").append(isTaken()).append("isHit = ").append(isHit()).append("getImg = ")
+				.append(getImg());
+		return builder.toString();
+	}
 
 }
