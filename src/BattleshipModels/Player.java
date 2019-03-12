@@ -45,7 +45,6 @@ public class Player {
 		// Count how many unique hits have occurred by the player
 		if (WinLose == 17) {
 			// player win
-
 			return playerName + "has won!";
 		} else {
 			return playerName;
