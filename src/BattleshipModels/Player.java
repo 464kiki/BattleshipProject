@@ -32,7 +32,7 @@ public class Player {
 	}
 
 	public void setWinLose(int winLose) {
-		WinLose = winLose;
+		WinLose = winLose + WinLose;
 	}
 	///////////////////
 
@@ -45,7 +45,7 @@ public class Player {
 		// Count how many unique hits have occurred by the player
 		if (WinLose == 17) {
 			// player win
-			return playerName + "has won!";
+			return playerName + " has won!";
 		} else {
 			return playerName;
 		}

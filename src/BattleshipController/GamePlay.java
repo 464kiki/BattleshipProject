@@ -41,7 +41,6 @@ public class GamePlay implements Initializable {
 
 	// Makes a global imageview for firing
 	private ImageView imageViewF;
-	private Object event;
 
 	// Has name of the imageview always accessible
 	private String location;
@@ -131,7 +130,7 @@ public class GamePlay implements Initializable {
 	}
 
 	public void getGridTiles_Placing() {
-		int rowNum = 11;
+		int rowNum = 10;
 		int colLetter = 10;
 		board = new Board();
 		tileLengthCA = 0;
@@ -262,13 +261,13 @@ public class GamePlay implements Initializable {
 	}
 
 	public void getGridTiles_Firing() {
-		int rowNum = 11;
+		int rowNum = 10;
 		int colLetter = 10;
 
 		for (int i = 0; i < rowNum; i++) {
 			for (int j = 0; j < colLetter; j++) {
 
-				// Makes a new ImageView each time
+				// Makes a new ImageView each times
 				ImageView imageView = new ImageView();
 				imageViewF = imageView;
 
@@ -290,8 +289,6 @@ public class GamePlay implements Initializable {
 				imageView.setOnMouseClicked((MouseEvent e) -> {
 					// Tells which one has been clicked
 					System.out.println(name);
-
-					event = e.getSource();
 
 					// Sets name to location so known what cell has been chosen
 					location = name;
@@ -326,15 +323,23 @@ public class GamePlay implements Initializable {
 							Image red_hit = new Image(hit.toURI().toString());
 							imageView.setImage(red_hit);
 							uniqueHit++;
+							
+							//Sets the win counter to current player
 							player.setWinLose(uniqueHit);
-
+							//Updates hashmap
+							players.put(player.getPlayerName(), player);
+						
+							
 							// Change boolean to true
 							board.getBoard()[y][x].setHit(true);
 							// Changes boolean to true
 							board.getBoard()[y][x].setTaken(true);
 							// Change image string to hit
 							board.getBoard()[y][x].setImg(target_hit);
-
+							
+							String currPlayer = player.getPlayerName();
+							System.out.println(player.checkWin(currPlayer));
+							
 						} else {
 							// Miss
 							// change imageview to white target
@@ -556,9 +561,6 @@ public class GamePlay implements Initializable {
 				currBoard = players.get(player1).getBoard();
 				player.setPlayerName(player1);
 			}
-
-			int rowNum = 11;
-			int colLetter = 10;
 
 			for (Node node : grid_firing.getChildren()) {
 				if (GridPane.getRowIndex(node) > 0 && GridPane.getColumnIndex(node) > 0) {

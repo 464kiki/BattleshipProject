@@ -6,7 +6,6 @@ public class Firing {
 	}
 
 	public boolean isHit() {
-		boolean isHit = true;
 //		do {
 //			// Checks if the tile has already been hit by getting an already stored boolean
 //			// in boardspot
