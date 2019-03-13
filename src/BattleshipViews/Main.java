@@ -10,7 +10,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("/BattleshipViews/BattleshipGUI.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/BattleshipGUI.fxml"));
 			Parent root1 = loader.load();
 			if (root1 == null) {
 				System.out.println("Is null");
